@@ -10,15 +10,19 @@ import lombok.Data;
 @AllArgsConstructor
 @Builder
 public class UserDto {
+    private String id;
     private String firstName;
     private String lastName;
     private Gender gender;
     private Integer age;
 
-    public UserDto(User user) {
-        this.firstName = user.getFirstName();
-        this.lastName = user.getLastName();
-        this.age = user.getAge();
-        this.gender = user.getGender();
+    public static UserDto getUserDto(User user) {
+        return UserDto.builder()
+                .id(user.getId())
+                .age(user.getAge())
+                .firstName(user.getFirstName())
+                .lastName(user.getLastName())
+                .gender(user.getGender())
+                .build();
     }
 }
