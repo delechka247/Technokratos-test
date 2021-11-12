@@ -20,4 +20,5 @@ public class UserForm {
     private String gender;
     @ValidAge
     private Integer age;
+    private String filmTitle;
 }
